@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- RSS feed for Industry Insights. Rebuilt automatically at every publish (tools/preview.py). -->
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Stoic Science: Industry Insights</title>
+    <link>https://stoicscience.us/blog/</link>
+    <atom:link href="https://stoicscience.us/feed.xml" rel="self" type="application/rss+xml"/>
+    <description>Short, practical notes on radiopharmaceutical QC, GxP documentation and the industry news that affects them.</description>
+    <language>en-us</language>
+    <item>
+      <title>The Part 212 rewrite missed its target date again</title>
+      <link>https://stoicscience.us/blog/part-212-rewrite-missed-its-date.html</link>
+      <guid isPermaLink="true">https://stoicscience.us/blog/part-212-rewrite-missed-its-date.html</guid>
+      <pubDate>Sun, 25 Oct 2026 12:00:00 +0000</pubDate>
+      <category>Regulation</category>
+      <description>The Food and Drug Administration&#x27;s Part 212 rewrite was due as a proposed rule in 09/2026 and hasn&#x27;t appeared. What it would change, and what labs can check.</description>
+    </item>
+  </channel>
+</rss>

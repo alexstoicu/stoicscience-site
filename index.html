@@ -32,7 +32,7 @@
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
   <!-- Stylesheet. Bump ?v= every time style.css changes (cache-busting) -->
-  <link rel="stylesheet" href="css/style.css?v=16">
+  <link rel="stylesheet" href="css/style.css?v=21">
 
   <!-- Preload the main font weight so text renders in Inter sooner -->
   <link rel="preload" href="fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
@@ -91,6 +91,8 @@
   <header class="site-header">
     <div class="container">
       <a class="wordmark" href="index.html">Stoic Science</a>
+      <!-- Industry Insights: the live part of the site, set apart between the wordmark and the menu -->
+      <a class="insights-link" href="blog/index.html"><span class="live-dot" aria-hidden="true"></span>Industry Insights</a>
       <nav class="site-nav" aria-label="Main">
         <ul>
           <li><a href="index.html" aria-current="page">Home</a></li>
@@ -135,10 +137,9 @@
         <h2>GxP documentation from someone who runs a GxP radiochemistry lab.</h2>
         <p>Early-stage biotech and pharma companies need GxP-compliant documentation. They cannot always justify a full-time hire to produce it. That is where I come in.</p>
         <p>Over a decade across the full pharmaceutical development pipeline. Radiopharmaceuticals is my specialty.</p>
-        <p class="lead-out">Let's talk.</p>
 
         <div class="button-row">
-          <a class="btn btn-primary" href="contact.html">Contact</a>
+          <a class="btn btn-primary" href="contact.html">Let's talk</a>
           <a class="btn" href="services.html">What I Offer</a>
           <a class="btn" href="sample-work.html">Sample Work</a>
           <!-- External link: opens in a new tab; rel="noopener" is a safety default -->

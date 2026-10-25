@@ -15,6 +15,7 @@
     10. Footer
     11. Accessibility helpers
     12. Inner pages   - compact page header, cards, chips, lists
+    13. Blog          - post list and article pages
 
    Remember: after any change here, bump the ?v= number on the
    <link> tag in every page, so browsers fetch the new version.
@@ -295,7 +296,7 @@ img {
 .section-alt {
   background: var(--paper-alt);
 }
-/* Bold one-line closer, e.g. "Let's talk." */
+/* Bold one-line closer (no longer used on pages; "Let's talk" is now the primary button) */
 .lead-out {
   font-weight: 600;
   color: var(--navy);
@@ -671,4 +672,273 @@ textarea:focus-visible {
    since it follows straight on from the section before */
 .closing-cta {
   padding-top: var(--space-3);
+}
+
+
+/* 13. BLOG ---------------------------------------------------------
+   The list page (blog/index.html) and one page per post.
+   Posts are long-form reading text, so they use the .reading column
+   (left-aligned lines in a centered column), per the alignment rule. */
+
+/* Post list (Industry Insights page): the classic blog archive layout.
+   One entry per post, newest first, divided by thin lines:
+   meta line (date · category · reading time), big linked title,
+   one-line excerpt, "Read more". Centred column, left-aligned text. */
+.post-list {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 720px;
+  text-align: left;
+}
+.post-list li {
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--line);
+}
+.post-list li:first-child {
+  padding-top: 0;
+}
+/* Paragraphs inside the list line up on the left edge (override the
+   site-wide centred-paragraph rule from section 8) */
+.post-list p {
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+}
+.post-list h2 {
+  font-size: var(--fs-lg);
+  margin: 0 0 var(--space-1);
+}
+.post-list h2 a {
+  color: var(--navy);
+  text-decoration: none;
+}
+.post-list h2 a:hover {
+  text-decoration: underline;
+}
+.post-list .post-excerpt {
+  margin: 0 0 var(--space-1);
+  max-width: none;
+  color: var(--text);
+}
+.read-more {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--navy);
+  text-decoration: none;
+}
+.read-more:hover {
+  text-decoration: underline;
+}
+/* Small "follow" line under the list (RSS feed) */
+.feed-note {
+  max-width: 720px;
+  margin: var(--space-3) auto 0;
+  font-size: var(--fs-sm);
+  color: var(--muted);
+  text-align: left;
+}
+
+/* Date and category line, above a post title or in the list */
+.post-meta {
+  font-size: var(--fs-sm);
+  color: var(--muted);
+  margin-bottom: var(--space-1);
+}
+.post-meta .post-cat {
+  font-weight: 600;
+  color: var(--navy);
+}
+
+/* A single post */
+.post p,
+.post li {
+  margin-left: 0;
+}
+.post a {
+  color: var(--navy);
+}
+/* Sources box at the end of every post */
+.post-sources {
+  margin-top: var(--space-4);
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--line);
+  font-size: var(--fs-sm);
+  color: var(--muted);
+}
+.post-sources h2 {
+  font-size: var(--fs-body);
+  margin: 0 0 var(--space-1);
+}
+.post-sources ul {
+  padding-left: 1.1rem;
+  margin: 0;
+}
+.post-sources li {
+  margin-bottom: 0.35rem;
+  overflow-wrap: anywhere;   /* long URLs wrap instead of overflowing on phones */
+}
+/* "Back to all posts" link */
+.back-link {
+  display: inline-block;
+  margin-top: var(--space-3);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+}
+
+/* Industry Insights link in the header -------------------------------
+   Sits on its own between the wordmark and the menu (the header row uses
+   space-between, so the gaps on both sides are equal). Gold pill + a small
+   pulsing dot: the "live" part of the site. */
+.insights-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem 0.85rem;
+  border: 1px solid rgba(200, 169, 110, 0.6);
+  border-radius: 999px;
+  color: var(--gold);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  text-decoration: none;
+}
+.insights-link:hover,
+.insights-link[aria-current="page"] {
+  background: rgba(200, 169, 110, 0.15);
+}
+.live-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--gold);
+  animation: live-pulse 2.4s ease-in-out infinite;
+}
+@keyframes live-pulse {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.35; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .live-dot { animation: none; }
+}
+
+/* Article structure (house style, 25 Oct 2026) ------------------------
+   Every post: Introduction, Core message, Takeaway (h2), plus optional
+   figures and tables. References are numbered superscript marks [n] that
+   jump to the References list; only the list links out to the sources. */
+.post h2 {
+  font-size: var(--fs-body);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin: var(--space-4) 0 var(--space-1);
+}
+.post h2:first-child {
+  margin-top: 0;
+}
+/* Reference mark: small superscript [n], links down to the reference */
+.post sup.ref {
+  font-size: 0.72em;
+  line-height: 0;
+  margin-left: 0.1em;
+}
+.post sup.ref a {
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--navy);
+}
+.post sup.ref a:hover {
+  text-decoration: underline;
+}
+/* Numbered reference list at the end of the post */
+.references {
+  margin-top: var(--space-4);
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--line);
+  font-size: var(--fs-sm);
+  color: var(--muted);
+}
+.references h2 {
+  margin-top: 0;
+}
+.references ol {
+  padding-left: 1.6rem;
+  margin: 0;
+}
+.references li {
+  margin-bottom: 0.45rem;
+  overflow-wrap: anywhere;
+  scroll-margin-top: var(--space-3);   /* leave room above when jumped to */
+}
+.references li:target {
+  background: rgba(200, 169, 110, 0.18);   /* briefly mark the reference you jumped to */
+}
+/* Optional figure (image + caption) */
+.post figure {
+  margin: var(--space-3) 0;
+}
+.post figure img {
+  display: block;
+  border: 1px solid var(--line);
+}
+.post figcaption {
+  margin-top: var(--space-1);
+  font-size: var(--fs-sm);
+  color: var(--muted);
+}
+/* Optional table */
+.post .table-wrap {
+  overflow-x: auto;   /* wide tables scroll on phones instead of breaking the page */
+  margin: var(--space-3) 0;
+}
+.post table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--fs-sm);
+}
+.post th {
+  background: var(--navy);
+  color: #FFFFFF;
+  text-align: left;
+  font-weight: 600;
+  padding: 0.5rem 0.65rem;
+}
+.post td {
+  padding: 0.5rem 0.65rem;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+.post table caption {
+  caption-side: bottom;
+  text-align: left;
+  padding-top: var(--space-1);
+  color: var(--muted);
+}
+
+/* Journal layout for articles (Alex, 25 Oct 2026) ----------------------
+   - The text column is as wide as the header row: from the "S" of the
+     wordmark to the last letter of "Contact" (the shared .container width).
+   - Paragraphs are justified, each starting with a first-line indent,
+     like a peer-reviewed journal. Hyphenation keeps the spacing even.
+   - Section headings and the References heading are centred. */
+.reading.post {
+  max-width: none;
+}
+.post p {
+  max-width: none;
+  text-align: justify;
+  text-indent: 2em;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+.post h2,
+.references h2 {
+  text-align: center;
+}
+.post ol,
+.post ul {
+  text-align: justify;
+  hyphens: auto;
+}
+.references ol {
+  text-align: left;   /* reference entries stay left-aligned: long URLs don't justify well */
 }

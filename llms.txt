@@ -12,6 +12,11 @@ Stoic Science serves pharmaceutical, radiopharmaceutical and early-stage biotech
 - [Sample Work](https://stoicscience.us/sample-work.html): mock GxP SOPs showing structure and depth. Client intellectual property is protected under NDA and never shared with other clients.
 - [Contact](https://stoicscience.us/contact.html): contact form for project inquiries; LinkedIn.
 
+## Industry Insights
+
+- [Industry Insights](https://stoicscience.us/blog/): weekly posts on radiopharmaceutical QC, GxP documentation and industry news.
+- [The Part 212 rewrite missed its target date again](https://stoicscience.us/blog/part-212-rewrite-missed-its-date.html) (25 October 2026): The Food and Drug Administration's Part 212 rewrite was due as a proposed rule in 09/2026 and hasn't appeared. What it would change, and what labs can check.
+
 ## Services
 
 - GxP Documentation: SOPs, work instructions, deviation reports, change controls, Certificate of Analysis templates.

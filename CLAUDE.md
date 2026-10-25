@@ -37,6 +37,49 @@ https://github.com/jlcatonjr/agentteams, trimmed by hand for a small static site
 5. Orchestrator shows Alex what changed (short) and how to preview it.
 6. On "commit": `git-operations` commits and pushes.
 
+## Blog department (added 25 Oct 2026)
+
+Goal: **one post per week**, current with industry news, in Alex's voice, nothing published without Alex.
+
+| Agent | Job | Writes |
+|---|---|---|
+| `news-scout` | Scours the web for verified industry news; keeps the dynamic topic backlog fresh and rotating | `topics.md` only |
+| `blog-writer` | Picks a topic (news preferred, category rotates), drafts 350–600 words in Alex's voice, links every source | the post's `draft.md` |
+| `copyright-editor` | Checks copied wording, quotes, attribution and links; tightens to the shortest insightful version | `draft.md`, `review.md` |
+| `copy-editor` | (existing) claims, site wording rules, confidentiality | notes in `review.md` |
+| `human-voice-scorer` | Quality gate, voice weighted heaviest: **≥ 80/100 and voice ≥ 26/35** to reach Alex | `review.md` only |
+
+- **Drafts live only in `C:\PROIECTE\StoicScience\stoicscience-blog-drafts\`** (local, no git, never uploaded).
+  Never write a draft into this repo: it is public and Pages publishes everything in it.
+- `voice.md` in the drafts folder is the voice reference. **Standing rule (Alex, 25 Oct 2026): keep it
+  continuously up to date.** After every correction Alex makes to a draft, and after every long prompt in
+  which his way of writing or thinking shows, add a dated line to "Learned from Alex's edits and prompts"
+  and refine the rules above it. The goal is that the writers truly synthesize his voice.
+- **Publishing needs Alex's explicit "publish"** for that post (that word is also the commit go for that post).
+  Then: fill `templates/post.html` → `blog/<slug>.html`, add the post to the top of `blog/index.html`,
+  add it to `sitemap.xml`, `llms.txt` and `feed.xml`, run `standards-auditor`, then `git-operations` pushes.
+  Log it in the drafts `history.md`.
+- Commands: `/weekly-blog` runs steps 1–6 and hands Alex the draft; `/publish-post <slug>` publishes an approved one.
+- **Article format (25 Oct 2026):** sections Introduction / <middle title chosen per subject, e.g. What happened> / Takeaway; optional figures and tables;
+  journal layout (full-width justified text, first-line indent, centred headings);
+  **reference marks [n] (superscript) instead of in-text links**, linking to a numbered References list that
+  links to the sources. Converter and preview: `stoicscience-blog-drafts/tools/preview.py`.
+- **Header:** Industry Insights sits on its own between the wordmark and Home (gold pill with a live dot).
+- The Blog nav link and `blog/index.html` stay **uncommitted until the first post is published**.
+
+## Business dashboard (standing rule, Alex, 25 Oct 2026)
+
+`C:\PROIECTE\StoicScience\dashboard\` is a local, explorable map of the whole business. `index.html` draws it (2D map; the 3D globe trial was rejected as too noisy on 25 Oct 2026)
+and `data.js` holds the facts. **Whenever work moves (a task finished, a status changed, a new item or a
+decision), update `data.js` in the same turn**: the node's status, done/next/blockers, the `nextMove` banner
+and the `updated` date. Alex should never need to ask for a summary; the dashboard is the live view.
+
+## SOP department (planned, after the blog machine runs)
+
+A third team to **create, review, score and develop SOP templates** from several inputs, starting with
+Alex's existing mock `STO-SOP-RCP-001` v1.0 (in `C:\PROIECTE\StoicScience\Sample SOPs\`, outside this repo).
+This is the core of the business and needs heavy input from Alex: design it with him, don't build it ahead.
+
 ## Technical ground rules
 
 - **Plain hand-written HTML, CSS and a little vanilla JS.** No frameworks, no build step, no npm packages, no CSS/JS from CDNs. GitHub Pages serves `main` / root as-is.
