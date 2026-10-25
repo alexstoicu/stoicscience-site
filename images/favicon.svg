@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Stoic Science favicon: gold "S" on a navy square (placeholder until a logo mark exists) -->
+  <rect width="64" height="64" rx="8" fill="#1B2A41"/>
+  <text x="32" y="46" text-anchor="middle" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="42" font-weight="600" fill="#C8A96E">S</text>
+</svg>

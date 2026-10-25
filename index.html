@@ -7,26 +7,80 @@
 
   <!-- Title and description: what shows in Google results and link previews -->
   <title>Stoic Science | GxP Documentation &amp; Radiopharmaceutical Consulting</title>
-  <meta name="description" content="Independent GxP documentation and radiopharmaceutical consulting: SOPs, method validation and radiochemistry compliance for pharma, radiopharma and CDMO teams. Durham-Raleigh, NC, available remotely.">
+  <meta name="description" content="Independent GxP documentation and radiopharmaceutical consulting: SOPs, method validation and radiopharmaceutical compliance for pharmaceutical, radiopharmaceutical and early-stage biotech teams. Research Triangle Park, NC, and surrounding area; available remotely worldwide.">
   <meta name="author" content="Alex Stoicu">
 
   <!-- Canonical: tells search engines the one official address of this page -->
   <link rel="canonical" href="https://stoicscience.us/">
 
   <!-- Open Graph / Twitter: how the link looks when shared on LinkedIn etc.
-       TODO: add og:image (PNG/JPG, 1200x630) once the share image exists -->
+       Share image: images/og-image.png (PNG, 1200x630) -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Stoic Science">
   <meta property="og:title" content="Stoic Science | GxP Documentation &amp; Radiopharmaceutical Consulting">
-  <meta property="og:description" content="Independent GxP documentation and radiopharmaceutical consulting. Durham-Raleigh, NC, available remotely worldwide.">
+  <meta property="og:description" content="Independent GxP documentation and radiopharmaceutical consulting. Research Triangle Park, NC, and surrounding area; available remotely worldwide.">
   <meta property="og:url" content="https://stoicscience.us/">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:image" content="https://stoicscience.us/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Stoic Science: GxP Documentation &amp; Radiopharmaceutical Consulting">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Browser-tab icon (SVG for modern browsers, PNG fallback) and phone home-screen icon -->
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="images/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
   <!-- Stylesheet. Bump ?v= every time style.css changes (cache-busting) -->
-  <link rel="stylesheet" href="css/style.css?v=8">
+  <link rel="stylesheet" href="css/style.css?v=16">
 
   <!-- Preload the main font weight so text renders in Inter sooner -->
   <link rel="preload" href="fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- STRUCTURED DATA (JSON-LD): facts about the business for search engines
+       and AI assistants, in the schema.org vocabulary. Invisible on the page.
+       The "@id" values let other pages point to the same business and person. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://stoicscience.us/#website",
+        "url": "https://stoicscience.us/",
+        "name": "Stoic Science",
+        "publisher": { "@id": "https://stoicscience.us/#business" }
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://stoicscience.us/#business",
+        "name": "Stoic Science",
+        "url": "https://stoicscience.us/",
+        "slogan": "Precision | Discipline | Compliance",
+        "description": "Independent GxP documentation and radiopharmaceutical consulting: SOPs, method validation and transfer, radiopharmaceutical compliance, instrument qualification, and GxP training.",
+        "image": "https://stoicscience.us/images/og-image.png",
+        "logo": "https://stoicscience.us/images/apple-touch-icon.png",
+        "founder": { "@id": "https://stoicscience.us/#alex" },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Research Triangle Park",
+          "addressRegion": "NC",
+          "addressCountry": "US"
+        },
+        "areaServed": "Worldwide",
+        "knowsAbout": ["GxP documentation", "Radiopharmaceuticals", "Radiochemical purity testing", "Analytical method validation", "ICH Q2(R2)", "21 CFR 212", "USP <823>", "Instrument qualification", "Radiation safety"]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://stoicscience.us/#alex",
+        "name": "Alex Stoicu",
+        "jobTitle": "Pharmaceutical Scientist",
+        "url": "https://stoicscience.us/about.html",
+        "sameAs": ["https://www.linkedin.com/in/alexstoicu"]
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -59,7 +113,7 @@
           <hr class="hero-rule">
           <!-- aria-hidden: screen readers skip the decorative | bars -->
           <p class="hero-subline sep-line">
-            <span>Alex Stoicu</span><span class="sep" aria-hidden="true">|</span><span>Durham-Raleigh, NC</span><span class="sep" aria-hidden="true">|</span><span>Available Remotely Worldwide</span>
+            <span>Alex Stoicu</span><span class="sep" aria-hidden="true">|</span><span>Research Triangle Park, NC &amp; Surrounding Area</span><span class="sep" aria-hidden="true">|</span><span>Available Remotely Worldwide</span>
           </p>
         </div>
       </div>
@@ -78,9 +132,9 @@
          Sample Work = wants proof, LinkedIn = checking credentials -->
     <section class="section">
       <div class="container">
-        <h2>GxP documentation from someone who has run a GMP radiochemistry lab.</h2>
+        <h2>GxP documentation from someone who runs a GxP radiochemistry lab.</h2>
         <p>Early-stage biotech and pharma companies need GxP-compliant documentation. They cannot always justify a full-time hire to produce it. That is where I come in.</p>
-        <p>Over a decade across the full drug development pipeline. Radiopharmaceuticals is my specialty.</p>
+        <p>Over a decade across the full pharmaceutical development pipeline. Radiopharmaceuticals is my specialty.</p>
         <p class="lead-out">Let's talk.</p>
 
         <div class="button-row">

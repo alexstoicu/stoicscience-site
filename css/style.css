@@ -508,6 +508,165 @@ textarea:focus-visible {
   background: var(--gold);   /* decorative shape, not text: fine on white */
 }
 
+/* Notice callout: a short "please note" box.
+   Soft gold background, gold edge, round "!" badge, small italic text.
+   Reading text, so it is left-aligned inside a centered column. */
+.notice {
+  display: flex;
+  gap: var(--space-2);
+  align-items: flex-start;
+  max-width: var(--text-max);
+  margin: 0 auto;
+  padding: var(--space-2) var(--space-3);
+  background: rgba(200, 169, 110, 0.18);   /* gold at 18%: a pale gold tint */
+  border-left: 4px solid var(--gold);
+  text-align: left;
+}
+/* The round "!" badge */
+.notice-icon {
+  flex: 0 0 auto;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--navy);
+  font-weight: 700;
+  font-style: normal;
+  text-align: center;
+  line-height: 1.75rem;
+}
+.notice p {
+  margin: 0;
+  font-size: var(--fs-sm);
+  font-style: italic;
+  color: var(--text);
+}
+.notice strong {
+  font-style: normal;
+}
+/* Less space around a section that only holds a notice */
+.section-tight {
+  padding: var(--space-3) 0;
+}
+
+/* Document entries (Sample Work): small code label above the title */
+.doc-code {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  margin-bottom: var(--space-1);
+}
+/* "Coming soon" entries: same card, quieter */
+.card.is-pending {
+  border-top-color: var(--line);
+}
+.card .status {
+  margin-top: var(--space-2);
+  font-weight: 600;
+  color: var(--muted);
+}
+.card .button-row {
+  margin-top: var(--space-2);
+}
+
+/* Inside a .reading column, lists and chips line up on the left
+   with the text instead of centering */
+.reading .chip-list {
+  justify-content: flex-start;
+  margin-bottom: var(--space-2);
+}
+.reading .tick-list {
+  margin-left: 0;
+  width: auto;
+}
+
+/* chip-grid: boxes fill each row edge to edge.
+   2 per row on phones, 4 per row from 600px. flex-grow (the first 1)
+   lets a shorter last row stretch its boxes to the full width, so
+   long labels like "Raw material testing" stay on one line. */
+.chip-list.chip-grid {
+  justify-content: center;
+}
+.chip-grid li {
+  flex: 1 1 calc((100% - var(--space-1)) / 2);       /* 2 per row */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.5rem;        /* room for two lines, so all boxes match */
+  line-height: 1.3;          /* tighter lines: a two-line label still fits */
+  text-align: center;
+}
+@media (min-width: 600px) {
+  .chip-grid li {
+    flex-basis: calc((100% - 3 * var(--space-1)) / 4); /* 4 per row */
+  }
+}
+.reading h2 {
+  margin-top: var(--space-4);
+}
+.reading h2:first-child {
+  margin-top: 0;
+}
+
+/* CONTACT FORM ------------------------------------------------------
+   Labels sit above their fields; fields fill the column width. */
+.contact-form {
+  max-width: 560px;
+  margin: var(--space-3) auto 0;
+  text-align: left;
+}
+.contact-form label {
+  display: block;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--navy);
+  margin: var(--space-2) 0 0.35rem;
+}
+/* "(optional)" next to a label */
+.contact-form label .optional {
+  font-weight: 400;
+  color: var(--muted);
+}
+/* Small grey helper line under a label */
+.contact-form .hint {
+  margin: 0 0 0.35rem;
+  font-size: var(--fs-sm);
+  color: var(--muted);
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  font: inherit;               /* use the site font, not the browser's default */
+  font-size: var(--fs-body);
+  color: var(--text);
+  background: var(--paper);
+  border: 1px solid #9AA5B1;   /* darker than --line so the box edge is easy to see */
+  border-radius: 0;
+}
+.contact-form textarea {
+  resize: vertical;            /* visitors can make it taller, not wider */
+}
+/* Send button: full width of the form, so it lines up with the fields */
+.contact-form button {
+  width: 100%;
+  margin-top: var(--space-3);
+  cursor: pointer;
+  font-family: inherit;        /* site font; size comes from .btn */
+}
+/* The spam trap checkbox: present in the page, invisible to people */
+.contact-form .botcheck {
+  position: absolute;
+  left: -9999px;
+}
+/* Result line written by the script ("Thank you..." or an error) */
+.form-status {
+  margin-top: var(--space-2);
+  font-weight: 600;
+  color: var(--navy);
+}
+
 /* Closing call-to-action block: a little less space above it,
    since it follows straight on from the section before */
 .closing-cta {

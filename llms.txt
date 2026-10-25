@@ -1,0 +1,36 @@
+# Stoic Science
+
+> Independent GxP documentation and radiopharmaceutical consulting by Alex Stoicu, a pharmaceutical scientist based in Research Triangle Park, North Carolina, USA, available remotely worldwide. Specialty: radiopharmaceuticals, with hands-on GxP radiochemistry drug product testing and lab management experience.
+
+Stoic Science serves pharmaceutical, radiopharmaceutical and early-stage biotech teams that need regulated documentation done correctly without a full-time hire. Tagline: Precision | Discipline | Compliance.
+
+## Pages
+
+- [Home](https://stoicscience.us/): overview, positioning and contact options.
+- [About](https://stoicscience.us/about.html): Alex Stoicu's background across the pharmaceutical development pipeline, radiopharmaceutical specialty, analytical toolkit, and research history (NILPRP, Romania; ESA Spin Your Thesis 2015; peer-reviewed publications).
+- [What I Offer](https://stoicscience.us/services.html): the five services, the standards followed, typical situations, and the three engagement models.
+- [Sample Work](https://stoicscience.us/sample-work.html): mock GxP SOPs showing structure and depth. Client intellectual property is protected under NDA and never shared with other clients.
+- [Contact](https://stoicscience.us/contact.html): contact form for project inquiries; LinkedIn.
+
+## Services
+
+- GxP Documentation: SOPs, work instructions, deviation reports, change controls, Certificate of Analysis templates.
+- Method Validation & Transfer: validation protocols and reports for HPLC-RAD, radio-TLC, GC-FID, headspace GC-FID, and wet chemistry methods, including raw material and API testing; feasibility studies, method transfers, bridging packages; validation to ICH Q2(R2).
+- Radiopharmaceutical Compliance: radiochemical purity testing SOPs, radiation safety documentation, lab setup, waste management procedures.
+- Instrument Qualification: IQ/OQ/PQ protocols and reports for HPLC and GC systems, dose calibrators, and radio-TLC scanners, for smaller labs without their own qualification program.
+- GxP Training: radiation safety, radioactive sample handling, radiation safety documentation, good documentation practice, working to SOPs.
+
+## Standards
+
+21 CFR 211, 21 CFR 212, USP <823>, ICH Q2(R2), EU GMP Annex 15.
+
+## Engagement models
+
+- Project-based: fixed scope, fixed fee.
+- Retainer: ongoing monthly documentation support.
+- Advisory: hourly subject matter expert consultation.
+
+## Contact
+
+- Contact form: https://stoicscience.us/contact.html
+- LinkedIn: https://www.linkedin.com/in/alexstoicu

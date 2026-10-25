@@ -57,6 +57,10 @@ https://github.com/jlcatonjr/agentteams, trimmed by hand for a small static site
 - Confident, not salesy. Precision over persuasion.
 - The practice is on hold, not closed: credible and complete, **no urgency or "taking clients now" language**.
 - **No "LLC" anywhere** (not filed yet). Footer: `© 2026 Stoic Science`.
+- Location: "Research Triangle Park, NC & Surrounding Area" (not Durham-Raleigh). Hero sub-line:
+  `Alex Stoicu | Research Triangle Park, NC & Surrounding Area | Available Remotely Worldwide`.
+- Say "pharmaceutical development pipeline", not "drug development".
+- Audience wording for meta/structured data: "pharmaceutical, radiopharmaceutical and early-stage biotech teams".
 
 **Brand**
 - Name: Stoic Science. Tagline: `Precision | Discipline | Compliance` (design element, not links, until the blog exists).
@@ -74,7 +78,10 @@ Blog later: a professional blog about real-world radiopharmaceutical situations.
 - Five cards: GxP Documentation, Method Validation & Transfer, Radiopharmaceutical Compliance,
   Instrument Qualification (for smaller labs without their own qualification program), GxP Training.
 - **Not offered:** gap assessment, inspection readiness. Don't add them.
-- Method Validation uses **ICH Q2(R2)**; techniques include UV-Vis, FTIR, Karl Fischer, osmolality. **No particle sizing.**
+- Method Validation uses **ICH Q2(R2)**; techniques: HPLC-RAD, radio-TLC, GC-FID, headspace GC-FID, wet chemistry,
+  raw material and API testing. **Not listed anywhere:** UV-Vis, FTIR, Karl Fischer, osmolality, particle sizing, HPLC-MS.
+- Say **GxP**, never GMP (exception: the regulation name "EU GMP Annex 15").
+- Alex's radiochemistry lab role is **current** (present tense: "I run the lab").
 - "Standards I work to": 21 CFR 211, 21 CFR 212, USP <823>, ICH Q2(R2), EU GMP Annex 15.
 - A "Typical situations" block on the Services page.
 - Market research (25 Oct 2026): nobody in this market publishes prices or real sample documents;
@@ -84,6 +91,9 @@ Blog later: a professional blog about real-world radiopharmaceutical situations.
 `STO-SOP-DEV-001` Laboratory Deviation & Investigation (coming soon),
 `STO-SOP-PRM-001` Primary Reference Material (coming soon).
 Only the **watermarked SAMPLE PDF** is ever published, and only after it has been read and checked.
+Plan (25 Oct 2026): Alex will rewrite the SOPs as heavily redacted mock documents, downloadable as PDF;
+readable parts limited to public guidance (USP, ICH). Document descriptions on the page are placeholders
+until then. The gold "Please note" callout (mock SOPs, client IP under NDA) is approved and stays.
 
 **Contact**
 - Web3Forms form posting to `https://api.web3forms.com/submit`, reusing Alex's existing access key.

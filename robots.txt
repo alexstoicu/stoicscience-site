@@ -1,0 +1,40 @@
+# robots.txt: tells crawlers what they may read on stoicscience.us
+#
+# Decision (Alex, 25 Oct 2026): everything is open to every crawler,
+# including AI search, answer AND training crawlers.
+# The named blocks below are explicit welcomes; "User-agent: *" alone
+# already allows them, but naming them removes any doubt.
+
+User-agent: *
+Allow: /
+
+# Search engines
+User-agent: Googlebot
+User-agent: Bingbot
+User-agent: Applebot
+User-agent: DuckAssistBot
+Allow: /
+
+# AI search and answer crawlers (fetch pages to answer questions)
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: MistralAI-User
+Allow: /
+
+# AI training crawlers (allowed by decision)
+User-agent: GPTBot
+User-agent: ClaudeBot
+User-agent: anthropic-ai
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: meta-externalagent
+User-agent: Amazonbot
+User-agent: cohere-ai
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://stoicscience.us/sitemap.xml

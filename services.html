@@ -10,16 +10,47 @@
   <meta name="author" content="Alex Stoicu">
   <link rel="canonical" href="https://stoicscience.us/services.html">
 
-  <!-- Open Graph / Twitter (og:image added later with the share image) -->
+  <!-- Open Graph / Twitter (share image: images/og-image.png) -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Stoic Science">
   <meta property="og:title" content="What I Offer | Stoic Science">
   <meta property="og:description" content="GxP documentation and radiopharmaceutical expertise, delivered with precision, on time, audit-ready.">
   <meta property="og:url" content="https://stoicscience.us/services.html">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:image" content="https://stoicscience.us/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Stoic Science: GxP Documentation &amp; Radiopharmaceutical Consulting">
+  <meta name="twitter:card" content="summary_large_image">
 
-  <link rel="stylesheet" href="css/style.css?v=8">
+  <!-- Browser-tab icon (SVG for modern browsers, PNG fallback) and phone home-screen icon -->
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="images/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="css/style.css?v=16">
   <link rel="preload" href="fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- STRUCTURED DATA (JSON-LD): the five services, each linked to the
+       business defined on the Home page (same "@id"). Keep in sync with the cards. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Stoic Science services",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "item": { "@type": "Service", "name": "GxP Documentation", "provider": { "@id": "https://stoicscience.us/#business" },
+        "description": "SOPs, work instructions, deviation reports, change controls, and Certificate of Analysis templates." } },
+      { "@type": "ListItem", "position": 2, "item": { "@type": "Service", "name": "Method Validation & Transfer", "provider": { "@id": "https://stoicscience.us/#business" },
+        "description": "Validation protocols and reports for HPLC-RAD, radio-TLC, GC-FID, headspace GC-FID, and wet chemistry methods, including raw material and API testing; feasibility studies, method transfers, and bridging packages; validation to ICH Q2(R2)." } },
+      { "@type": "ListItem", "position": 3, "item": { "@type": "Service", "name": "Radiopharmaceutical Compliance", "provider": { "@id": "https://stoicscience.us/#business" },
+        "description": "Radiochemical purity testing SOPs, radiation safety documentation, lab setup, and waste management procedures for radiopharmaceutical operations." } },
+      { "@type": "ListItem", "position": 4, "item": { "@type": "Service", "name": "Instrument Qualification", "provider": { "@id": "https://stoicscience.us/#business" },
+        "description": "IQ/OQ/PQ protocols and reports for HPLC and GC systems, dose calibrators, and radio-TLC scanners, for smaller labs without their own qualification program." } },
+      { "@type": "ListItem", "position": 5, "item": { "@type": "Service", "name": "GxP Training", "provider": { "@id": "https://stoicscience.us/#business" },
+        "description": "Practical training in radiation safety, radioactive sample handling, radiation safety documentation, good documentation practice, and working to SOPs." } }
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -64,13 +95,13 @@
 
           <article class="card">
             <h3>Method Validation &amp; Transfer</h3>
-            <p>Validation protocols and reports for HPLC, GC, radiochemical, UV-Vis, FTIR, Karl Fischer, and osmolality methods. Feasibility studies, method transfers, and bridging packages, with validation to ICH Q2(R2).</p>
+            <p>Validation protocols and reports for HPLC-RAD, radio-TLC, GC-FID, headspace GC-FID, and wet chemistry methods, including raw material and API testing. Feasibility studies, method transfers, and bridging packages, with validation to ICH Q2(R2).</p>
           </article>
 
           <article class="card">
             <h3>Radiopharmaceutical Compliance</h3>
             <p>Radiochemical purity testing SOPs, radiation safety documentation, lab setup, and waste management procedures for radiopharmaceutical operations.</p>
-            <p class="card-note">One of very few consultants with hands-on GMP radiochemistry lab management experience.</p>
+            <p class="card-note">One of very few consultants with hands-on GxP radiochemistry lab management experience.</p>
           </article>
 
           <article class="card">
