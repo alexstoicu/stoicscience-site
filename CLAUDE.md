@@ -41,8 +41,11 @@ https://github.com/jlcatonjr/agentteams, trimmed by hand for a small static site
 
 - **Plain hand-written HTML, CSS and a little vanilla JS.** No frameworks, no build step, no npm packages, no CSS/JS from CDNs. GitHub Pages serves `main` / root as-is.
 - **Fonts are self-hosted** in the repo (open licence). No Google Fonts requests.
-- **Relative links only** (`about.html`, `css/style.css`), so the site works both at
-  `https://alexstoicu.github.io/stoicscience-site/` (preview) and at `https://stoicscience.us`.
+- **Relative links only** (`about.html`, `css/style.css`) in normal pages. Exception: `404.html` and
+  `home/index.html` use root links (`/css/style.css`) because they can be served at any depth.
+- **Live at `https://stoicscience.us`** since 25 Oct 2026 (GitHub Pages, custom domain). The `CNAME` file
+  in the repo root holds the domain: **never delete it**. The github.io address now redirects to the domain.
+- `home/index.html` redirects the old Google Sites address `/home` to `/`.
 - **CSS cache-busting:** stylesheet link carries a version tag (`style.css?v=1`); bump it on every CSS change.
 - `.nojekyll` at the root so GitHub Pages serves files untouched.
 - The only third-party service is **Web3Forms** for the contact form (Alex approved it, same as xp-site).
