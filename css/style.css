@@ -1,0 +1,515 @@
+/* ==================================================================
+   Stoic Science: main stylesheet (shared by every page)
+
+   How this file is organised:
+     1. Fonts         - Inter, self-hosted from /fonts (no Google calls)
+     2. Design tokens - colours, spacing, widths as CSS variables.
+                        Change a colour here and it changes everywhere.
+     3. Base          - default look of plain HTML elements
+     4. Layout        - the page container
+     5. Header & nav
+     6. Hero          - navy block with the framed headline
+     7. Tagline band
+     8. Sections      - white content areas
+     9. Buttons
+    10. Footer
+    11. Accessibility helpers
+    12. Inner pages   - compact page header, cards, chips, lists
+
+   Remember: after any change here, bump the ?v= number on the
+   <link> tag in every page, so browsers fetch the new version.
+   ================================================================== */
+
+
+/* 1. FONTS ---------------------------------------------------------
+   One family, three weights. font-display: swap shows text in a
+   fallback font straight away, then swaps Inter in when it loads. */
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/inter-400.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/inter-600.woff2") format("woff2");
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/inter-700.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+
+
+/* 2. DESIGN TOKENS ------------------------------------------------- */
+:root {
+  /* Brand colours */
+  --navy: #1B2A41;          /* primary dark: hero, headings, buttons */
+  --navy-deep: #142033;     /* slightly darker navy for the tagline band */
+  --gold: #C8A96E;          /* accent: rules, wordmark, tagline. Only on navy,
+                               never as text on white (contrast too low) */
+
+  /* Text and surfaces */
+  --text: #1F2933;          /* body text on white */
+  --muted: #52606D;         /* secondary text */
+  --line: #E4E7EB;          /* thin borders and dividers */
+  --paper: #FFFFFF;         /* page background */
+  --paper-alt: #F5F7FA;     /* light grey for alternating sections */
+
+  /* Type */
+  --font: "Inter", "Segoe UI", Arial, sans-serif;
+
+  /* Type scale: the ONLY four text sizes on the site.
+     Everything uses one of these, which keeps the look uniform. */
+  --fs-sm:   0.9375rem;                     /* 15px: nav, buttons, small print, labels */
+  --fs-body: 1.0625rem;                     /* 17px: body text, wordmark, card titles */
+  --fs-lg:   1.5rem;                        /* 24px: section headings (h2) */
+  --fs-xl:   clamp(1.5rem, 5vw, 2.5rem);    /* 24-40px: page headline (h1), grows with screen.
+                                               24px minimum so "Radiopharmaceutical" fits a 320px phone */
+
+  /* Spacing scale: use these instead of random pixel values */
+  --space-1: 0.5rem;   /*  8px */
+  --space-2: 1rem;     /* 16px */
+  --space-3: 1.5rem;   /* 24px */
+  --space-4: 2.5rem;   /* 40px */
+  --space-5: 4rem;     /* 64px */
+
+  /* Widths */
+  --page-max: 880px;   /* one shared column: header, hero frame and sections
+                          all start and end at the same edges */
+  --text-max: 65ch;    /* comfortable reading line (about 65 characters) */
+}
+
+
+/* 3. BASE ---------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;   /* padding is included in widths: easier maths */
+}
+
+html {
+  -webkit-text-size-adjust: 100%;   /* stop phones inflating text sizes */
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: var(--fs-body);
+  line-height: 1.65;
+  color: var(--text);
+  background: var(--paper);
+}
+
+h1, h2, h3 {
+  color: var(--navy);
+  line-height: 1.2;
+  font-weight: 600;
+  margin: 0 0 var(--space-2);
+  text-wrap: balance;        /* evens out line lengths: no lone word on the last line */
+}
+h2 { font-size: var(--fs-lg); }
+h3 { font-size: var(--fs-body); }   /* same size as body, set apart by weight */
+
+p {
+  margin: 0 0 var(--space-2);
+  max-width: var(--text-max);
+}
+
+a {
+  color: var(--navy);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* 4. LAYOUT --------------------------------------------------------
+   .container keeps content centred, with 16px side gutters on
+   phones and more breathing room on larger screens. */
+.container {
+  width: 100%;
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: 0 var(--space-2);
+}
+@media (min-width: 768px) {
+  .container { padding: 0 var(--space-3); }
+}
+
+
+/* 5. HEADER & NAV --------------------------------------------------
+   Phone: wordmark on top, nav links wrap underneath.
+   Wider screens: wordmark left, nav right, on one line. */
+.site-header {
+  background: var(--navy);
+}
+.site-header .container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-1) var(--space-3);
+  padding-top: var(--space-2);
+  padding-bottom: var(--space-2);
+}
+
+/* The "Stoic Science" text logo */
+.wordmark {
+  color: var(--gold);
+  font-weight: 600;
+  font-size: var(--fs-body);
+  letter-spacing: 0.04em;
+  text-decoration: none;
+}
+
+.site-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) 1.25rem;   /* 20px between links: grouped, not spread */
+}
+.site-nav a {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: var(--fs-sm);
+  opacity: 0.85;
+}
+.site-nav a:hover {
+  opacity: 1;
+}
+/* The current page: full opacity plus a gold underline.
+   Set by aria-current="page" on that page's link. */
+.site-nav a[aria-current="page"] {
+  opacity: 1;
+  border-bottom: 2px solid var(--gold);
+  padding-bottom: 2px;
+}
+
+
+/* 6. HERO ----------------------------------------------------------
+   Navy block; the headline sits in a thin gold frame.
+   The frame fills the shared column, so its edges line up with the
+   wordmark/nav above and the section text below. */
+.hero {
+  background: var(--navy);
+  color: #FFFFFF;
+  padding: var(--space-2) 0 var(--space-4);      /* 16px top, 40px bottom */
+}
+.hero-frame {
+  border: 1px solid rgba(200, 169, 110, 0.55);   /* gold at 55% */
+  padding: var(--space-4) var(--space-2);        /* phones: 40px top/bottom, 16px sides */
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .hero-frame { padding: var(--space-4) var(--space-3); }   /* wider screens: 24px sides */
+}
+.hero h1 {
+  color: #FFFFFF;
+  font-size: var(--fs-xl);
+  font-weight: 600;
+  margin: 0;
+  overflow-wrap: break-word;   /* safety net: a long word wraps instead of overflowing */
+}
+/* Short gold line under the headline */
+.hero-rule {
+  width: 64px;
+  height: 2px;
+  margin: var(--space-3) auto;
+  border: 0;
+  background: var(--gold);
+}
+.hero-subline {
+  margin: 0 auto;
+  max-width: none;
+  font-size: var(--fs-sm);
+  color: rgba(255, 255, 255, 0.9);
+}
+/* "Separated lines": the hero subline and the tagline band.
+   Items sit in a centred row with gold | separators between them.
+   On phones the row wraps; the separators are hidden there so a
+   line never starts or ends with a stray "|". */
+.sep-line {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem 1rem;
+}
+.sep-line .sep {
+  color: var(--gold);
+}
+@media (max-width: 599px) {
+  .sep-line .sep { display: none; }
+}
+
+
+/* 7. TAGLINE BAND --------------------------------------------------
+   Design element only (not links) until the blog exists. */
+.tagline-band {
+  background: var(--navy-deep);
+  color: var(--gold);
+  text-align: center;
+  padding: var(--space-3) var(--space-2);   /* 24px top/bottom: a bit taller */
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.tagline-band p {
+  margin: 0 auto;
+  max-width: none;
+}
+
+
+/* 8. SECTIONS ------------------------------------------------------
+   SITE-WIDE ALIGNMENT RULE (decided 25 Oct 2026):
+   "Centered layout, left-aligned reading text."
+   - Headings, intros, short card text, labels and buttons: centered,
+     on the same axis as the hero.
+   - Anything meant for reading (bullet lists, long paragraphs such as
+     the About story or blog posts): left-aligned text inside a
+     centered column. Use .tick-list or .reading for those. */
+.section {
+  padding: var(--space-4) 0 var(--space-5);      /* 40px top, 64px bottom */
+  text-align: center;
+}
+/* Paragraphs have a max width; auto side margins keep them on the centre line */
+.section p {
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Long-form text: a centered column with left-aligned lines */
+.reading {
+  max-width: var(--text-max);
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+.section-alt {
+  background: var(--paper-alt);
+}
+/* Bold one-line closer, e.g. "Let's talk." */
+.lead-out {
+  font-weight: 600;
+  color: var(--navy);
+}
+
+
+/* 9. BUTTONS -------------------------------------------------------
+   .btn is the base; .btn-primary is the filled navy version.
+   These are <a> links styled as buttons (they go to other pages). */
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;   /* centered, per the alignment rule */
+  gap: var(--space-1) var(--space-2);
+  margin-top: var(--space-3);
+}
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.25rem;
+  border: 1px solid var(--navy);
+  color: var(--navy);
+  background: transparent;
+  font-weight: 600;
+  font-size: var(--fs-sm);
+  text-decoration: none;
+  transition: background-color 0.15s, color 0.15s;
+}
+.btn:hover {
+  background: var(--navy);
+  color: #FFFFFF;
+}
+.btn-primary {
+  background: var(--navy);
+  color: #FFFFFF;
+}
+.btn-primary:hover {
+  background: var(--navy-deep);
+}
+
+
+/* 10. FOOTER ------------------------------------------------------- */
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: var(--space-3) 0;
+  font-size: var(--fs-sm);
+  color: var(--muted);
+}
+.site-footer .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-1);
+}
+.site-footer p {
+  margin: 0;
+}
+.site-footer a {
+  color: var(--muted);
+}
+
+
+/* 11. ACCESSIBILITY HELPERS ---------------------------------------- */
+
+/* Visible focus ring for keyboard users, on every link and control.
+   Navy on light backgrounds; gold inside the navy areas, where
+   navy wouldn't show. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--navy);
+  outline-offset: 3px;
+}
+.site-header :focus-visible,
+.hero :focus-visible {
+  outline-color: var(--gold);
+}
+
+/* "Skip to content" link: hidden until a keyboard user tabs to it */
+.skip-link {
+  position: absolute;
+  left: var(--space-2);
+  top: -100px;
+  background: var(--paper);
+  color: var(--navy);
+  padding: var(--space-1) var(--space-2);
+  z-index: 10;
+}
+.skip-link:focus {
+  top: var(--space-1);
+}
+
+/* Visitors who ask their system for less motion get no transitions */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
+
+
+/* 12. INNER PAGES --------------------------------------------------
+   Building blocks for About, Services, Sample Work and Contact. */
+
+/* Compact navy page header: a shorter cousin of the Home hero */
+.page-hero {
+  background: var(--navy);
+  color: #FFFFFF;
+  padding: var(--space-4) 0;
+  text-align: center;
+}
+.page-hero h1 {
+  color: #FFFFFF;
+  font-size: var(--fs-xl);
+  margin: 0;
+}
+.page-hero p {
+  margin: var(--space-2) auto 0;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Short intro line under a section heading */
+.section-intro {
+  color: var(--muted);
+}
+
+/* Card grid: one column on phones, two from 640px wide */
+.card-grid {
+  display: grid;
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+}
+@media (min-width: 640px) {
+  .card-grid { grid-template-columns: repeat(2, 1fr); }
+  /* Odd number of cards: the last one spans the full row
+     instead of sitting alone next to an empty gap */
+  .card-grid:not(.cols-3) > .card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+}
+/* Three columns, used for the engagement models.
+   Alex's call: their heading is centered, the card text stays left. */
+@media (min-width: 768px) {
+  .card-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+}
+.card-grid.cols-3 .card {
+  text-align: left;
+}
+
+/* A card: white box, thin border, gold line on top */
+.card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--gold);
+  padding: var(--space-3);
+}
+.card h3 {
+  margin-bottom: var(--space-1);
+}
+.card p {
+  margin: 0 auto;            /* auto keeps text centred in a wide card */
+  font-size: var(--fs-sm);
+  color: var(--muted);
+}
+/* The one line that sets a card apart (e.g. the radiochemistry differentiator) */
+.card .card-note {
+  margin-top: var(--space-2);
+  color: var(--navy);
+  font-weight: 600;
+}
+
+/* "Chips": short labels in a row, used for the standards list */
+.chip-list {
+  list-style: none;
+  margin: var(--space-3) 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-1);
+}
+.chip-list li {
+  border: 1px solid var(--navy);
+  color: var(--navy);
+  padding: 0.35rem 0.85rem;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+}
+
+/* Plain list with small gold squares instead of bullets.
+   Reading text: the list block sits centered (fit-content + auto
+   margins) but its lines stay left-aligned, so the squares line up. */
+.tick-list {
+  list-style: none;
+  margin: var(--space-3) auto 0;
+  padding: 0;
+  width: fit-content;
+  max-width: var(--text-max);
+  text-align: left;
+}
+.tick-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: var(--space-1);
+}
+.tick-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 0.5rem;
+  height: 0.5rem;
+  background: var(--gold);   /* decorative shape, not text: fine on white */
+}
+
+/* Closing call-to-action block: a little less space above it,
+   since it follows straight on from the section before */
+.closing-cta {
+  padding-top: var(--space-3);
+}

@@ -60,10 +60,25 @@ https://github.com/jlcatonjr/agentteams, trimmed by hand for a small static site
 
 **Brand**
 - Name: Stoic Science. Tagline: `Precision | Discipline | Compliance` (design element, not links, until the blog exists).
-- Gold accent `#C8A96E`. Navy hex and web font: **not yet chosen** (design-lead proposes, Alex confirms).
+- Gold accent `#C8A96E`. Navy `#1B2A41`. Font: **Inter** throughout (self-hosted, 400/600/700). "Modern" direction, chosen 25 Oct 2026.
 - Logo: gold text wordmark for now.
+- **Alignment rule (site-wide):** centered layout, left-aligned reading text. Headings, intros, short card
+  text, labels and buttons are centered on the hero's axis; bullet lists and long-form text (About story,
+  blog posts) are left-aligned inside a centered column. Exception chosen by Alex: engagement-model cards
+  keep left-aligned text under a centered section heading.
 
-**Pages (nav order):** Home, About, Services (shown as "What I Offer"), Sample Work, Contact. Blog later.
+**Pages (nav order):** Home, About, Services (shown as "What I Offer"), Sample Work, Contact.
+Blog later: a professional blog about real-world radiopharmaceutical situations.
+
+**Services (decided 25 Oct 2026)**
+- Five cards: GxP Documentation, Method Validation & Transfer, Radiopharmaceutical Compliance,
+  Instrument Qualification (for smaller labs without their own qualification program), GxP Training.
+- **Not offered:** gap assessment, inspection readiness. Don't add them.
+- Method Validation uses **ICH Q2(R2)**; techniques include UV-Vis, FTIR, Karl Fischer, osmolality. **No particle sizing.**
+- "Standards I work to": 21 CFR 211, 21 CFR 212, USP <823>, ICH Q2(R2), EU GMP Annex 15.
+- A "Typical situations" block on the Services page.
+- Market research (25 Oct 2026): nobody in this market publishes prices or real sample documents;
+  avoid "global leader", "trusted partner", "end-to-end", "comprehensive solutions", "guaranteed", exclamation marks.
 
 **Sample Work codes:** `STO-SOP-RCP-001` Radiochemical Purity Testing (the one real entry),
 `STO-SOP-DEV-001` Laboratory Deviation & Investigation (coming soon),
@@ -81,9 +96,6 @@ Only the **watermarked SAMPLE PDF** is ever published, and only after it has bee
 
 ## Open questions (ask when the step needs them, not all at once)
 
-- Navy hex and web font.
-- Method Validation card: broadened wording (UV-Vis, FTIR, Karl Fischer, osmolality, particle sizing), and ICH Q2(R1) vs Q2(R2) (R2 superseded R1 in 2023; flag, don't change silently).
-- Instrument Qualification and GxP Training as extra service cards?
 - About and Sample Work entry copy (live site gave only summaries).
 - AI crawlers: allow training crawlers, or only search/answer crawlers?
 - Card icons and the SAMPLE PDF: Alex drops them in the repo.

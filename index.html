@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ===== HEAD: information for browsers, search engines and AI crawlers ===== -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Title and description: what shows in Google results and link previews -->
+  <title>Stoic Science | GxP Documentation &amp; Radiopharmaceutical Consulting</title>
+  <meta name="description" content="Independent GxP documentation and radiopharmaceutical consulting: SOPs, method validation and radiochemistry compliance for pharma, radiopharma and CDMO teams. Durham-Raleigh, NC, available remotely.">
+  <meta name="author" content="Alex Stoicu">
+
+  <!-- Canonical: tells search engines the one official address of this page -->
+  <link rel="canonical" href="https://stoicscience.us/">
+
+  <!-- Open Graph / Twitter: how the link looks when shared on LinkedIn etc.
+       TODO: add og:image (PNG/JPG, 1200x630) once the share image exists -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Stoic Science">
+  <meta property="og:title" content="Stoic Science | GxP Documentation &amp; Radiopharmaceutical Consulting">
+  <meta property="og:description" content="Independent GxP documentation and radiopharmaceutical consulting. Durham-Raleigh, NC, available remotely worldwide.">
+  <meta property="og:url" content="https://stoicscience.us/">
+  <meta name="twitter:card" content="summary">
+
+  <!-- Stylesheet. Bump ?v= every time style.css changes (cache-busting) -->
+  <link rel="stylesheet" href="css/style.css?v=8">
+
+  <!-- Preload the main font weight so text renders in Inter sooner -->
+  <link rel="preload" href="fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+</head>
+
+<body>
+  <!-- Keyboard users can jump straight past the nav -->
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===== HEADER: same block on every page. aria-current marks the page you're on ===== -->
+  <header class="site-header">
+    <div class="container">
+      <a class="wordmark" href="index.html">Stoic Science</a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">What I Offer</a></li>
+          <li><a href="sample-work.html">Sample Work</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ===== HERO: framed headline, gold rule, name/location line ===== -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-frame">
+          <h1>GxP Documentation &amp; Radiopharmaceutical Consulting</h1>
+          <hr class="hero-rule">
+          <!-- aria-hidden: screen readers skip the decorative | bars -->
+          <p class="hero-subline sep-line">
+            <span>Alex Stoicu</span><span class="sep" aria-hidden="true">|</span><span>Durham-Raleigh, NC</span><span class="sep" aria-hidden="true">|</span><span>Available Remotely Worldwide</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TAGLINE BAND: design element, not links (until the blog exists) ===== -->
+    <div class="tagline-band">
+      <p class="sep-line">
+        <span>Precision</span><span class="sep" aria-hidden="true">|</span><span>Discipline</span><span class="sep" aria-hidden="true">|</span><span>Compliance</span>
+      </p>
+    </div>
+
+    <!-- ===== ABOUT SECTION + CTA CLUSTER =====
+         The four buttons match four kinds of visitor:
+         Contact = ready to talk, Services = researching,
+         Sample Work = wants proof, LinkedIn = checking credentials -->
+    <section class="section">
+      <div class="container">
+        <h2>GxP documentation from someone who has run a GMP radiochemistry lab.</h2>
+        <p>Early-stage biotech and pharma companies need GxP-compliant documentation. They cannot always justify a full-time hire to produce it. That is where I come in.</p>
+        <p>Over a decade across the full drug development pipeline. Radiopharmaceuticals is my specialty.</p>
+        <p class="lead-out">Let's talk.</p>
+
+        <div class="button-row">
+          <a class="btn btn-primary" href="contact.html">Contact</a>
+          <a class="btn" href="services.html">What I Offer</a>
+          <a class="btn" href="sample-work.html">Sample Work</a>
+          <!-- External link: opens in a new tab; rel="noopener" is a safety default -->
+          <a class="btn" href="https://www.linkedin.com/in/alexstoicu" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER: same block on every page. No "LLC" until it's filed ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Stoic Science</p>
+      <p><a href="https://www.linkedin.com/in/alexstoicu" target="_blank" rel="noopener">LinkedIn</a></p>
+    </div>
+  </footer>
+</body>
+</html>
