@@ -91,7 +91,9 @@ This is the core of the business and needs heavy input from Alex: design it with
 - `home/index.html` redirects the old Google Sites address `/home` to `/`.
 - **CSS cache-busting:** stylesheet link carries a version tag (`style.css?v=1`); bump it on every CSS change.
 - `.nojekyll` at the root so GitHub Pages serves files untouched.
-- The only third-party service is **Web3Forms** for the contact form (Alex approved it, same as xp-site).
+- Approved third-party services (Alex): **Web3Forms** (contact form, same as xp-site) and **GoatCounter**
+  (visitor statistics, cookieless, site code `alexstoicu`, added 27 October 2026). The GoatCounter tag goes in the
+  `<head>` of every public page and the post template; local previews strip it so they don't count.
 - Social/Open Graph image must be PNG or JPG, not SVG.
 
 ## Decisions (approved by Alex, 25 Oct 2026)
