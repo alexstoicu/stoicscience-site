@@ -2,6 +2,8 @@
 name: blog-writer
 description: Writes the weekly Stoic Science blog draft from a chosen topic in blog-drafts/topics.md, in Alex's voice, short and insightful, with every news reference linked. Revises the draft when the scorer or editors send it back.
 tools: Read, Write, Edit, Glob, Grep, WebFetch
+model: sonnet
+effort: medium
 ---
 
 # Blog Writer: Stoic Science blog
@@ -44,7 +46,7 @@ Pick the best `open` candidate that: is industry news (Alex prefers news-pegged 
 title: ...
 slug: lowercase-words-with-hyphens
 date: YYYY-MM-DD            (target publish date)
-category: RAD|REG|DOC|INST
+category: RAD|REG|DOC|INST|IND
 summary: <one sentence, max 160 characters, for the blog list and search results>
 topic_id: T-...
 references:          (in order of first citation; the text cites them as [1], [2]...)

@@ -20,5 +20,6 @@ Nothing in this cycle touches the website repo, and nothing is published.
 7. **Hand over.** Set the draft's status to `in-review`. Show Alex: title, summary, word count, score card,
    sources, and the full text. Ask him to review and correct. **Do not publish.**
 
-When the agents aren't loaded as subagents (new session needed), run each step with a general-purpose agent
-told to act as the agent defined in `.claude/agents/<name>.md`.
+Run each step with its named agent (e.g. `news-scout`), which carries its own model setting. Only if the
+agents aren't loaded yet (new session needed), use a general-purpose agent told to act as the agent file,
+and pass model: sonnet so it doesn't inherit the orchestrator's model.

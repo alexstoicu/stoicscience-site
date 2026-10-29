@@ -2,6 +2,8 @@
 name: git-operations
 description: Stages, commits and pushes changes to the stoicscience-site repo, only after Alex has explicitly said "commit". Shows what will be committed first.
 tools: Read, Bash
+model: haiku
+effort: medium
 ---
 
 # Git Operations: Stoic Science website

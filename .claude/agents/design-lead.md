@@ -2,6 +2,8 @@
 name: design-lead
 description: Builds and revises the site's HTML structure and CSS (layout, navy/gold palette, typography, spacing, responsive behaviour). Use for any page build or visual change, only after Alex approved the step.
 tools: Read, Write, Edit, Glob, Grep
+model: sonnet
+effort: medium
 ---
 
 # Design Lead: Stoic Science website

@@ -29,6 +29,17 @@ https://github.com/jlcatonjr/agentteams, trimmed by hand for a small static site
 | `standards-auditor` | Final check of a page before Alex reviews it: HTML, accessibility, links, SEO and AI-ready layer | No (read-only, reports findings) |
 | `git-operations` | Staging, commit, push, after Alex says "commit" | Git only |
 
+**Model use (cost, Alex 28 Oct 2026):** agents run on the model set in their own file (Sonnet; git-operations on
+Haiku). Call agents by name, not `general-purpose`. One-off research or review jobs with no agent file: pass
+model: sonnet.
+
+**The team does the work, not the orchestrator (Alex, 28 Oct 2026).** The main session (Opus 5.5, medium effort)
+plans, talks with Alex, decides and briefs; it does **not** write site files itself. Every build or edit of
+HTML, CSS, JS, sitemap, llms.txt or images goes to `design-lead`; wording to `copy-editor`; checks to
+`standards-auditor`; git to `git-operations`. The orchestrator writes only the brief (which file, what change,
+which rules apply) and reads the agent's short report. Exceptions: CLAUDE.md, the tracker and dashboard
+`data.js` (record-keeping), and a one-line fix Alex asks for directly. No monthly upkeep routine (Alex declined).
+
 **Standard flow for any page or change:**
 1. Orchestrator states the step in one or two lines and waits for Alex's go.
 2. `design-lead` builds or changes the markup/CSS.
@@ -64,6 +75,8 @@ Goal: **one post per week**, current with industry news, in Alex's voice, nothin
   journal layout (full-width justified text, first-line indent, centred headings);
   **reference marks [n] (superscript) instead of in-text links**, linking to a numbered References list that
   links to the sources. Converter and preview: `stoicscience-blog-drafts/tools/preview.py`.
+- **Industry & Market (IND) posts:** no company names for layoffs/hiring (aggregate by type); add a lag note right
+  after any statement based on lagging official data; charts drawn in-house from public data (SVG, navy/gold).
 - **Header:** Industry Insights sits on its own between the wordmark and Home (gold pill with a live dot).
 - The Blog nav link and `blog/index.html` stay **uncommitted until the first post is published**.
 
@@ -73,12 +86,13 @@ Goal: **one post per week**, current with industry news, in Alex's voice, nothin
 and `data.js` holds the facts. **Whenever work moves (a task finished, a status changed, a new item or a
 decision), update `data.js` in the same turn**: the node's status, done/next/blockers, the `nextMove` banner
 and the `updated` date. Alex should never need to ask for a summary; the dashboard is the live view.
+**Articles on the map (Alex, 27 Oct 2026):** show only the article currently in progress, numbered ("Post #n");
+remove it from the map once published and keep the published count on the Industry Insights card. In replies,
+mention only the active article.
 
-## SOP department (planned, after the blog machine runs)
+## SOP department
 
-A third team to **create, review, score and develop SOP templates** from several inputs, starting with
-Alex's existing mock `STO-SOP-RCP-001` v1.0 (in `C:\PROIECTE\StoicScience\Sample SOPs\`, outside this repo).
-This is the core of the business and needs heavy input from Alex: design it with him, don't build it ahead.
+Private. Its design, rules, effort settings and the backup plan live in `C:\PROIECTE\StoicScience\CLAUDE.md` (outside this public repo; backed up to Drive and the private repo). Read it before any SOP or backup work. Never copy that content back into this file.
 
 ## Technical ground rules
 
@@ -138,7 +152,13 @@ Blog later: a professional blog about real-world radiopharmaceutical situations.
 **Sample Work codes:** `STO-SOP-RCP-001` Radiochemical Purity Testing (the one real entry),
 `STO-SOP-DEV-001` Laboratory Deviation & Investigation (coming soon),
 `STO-SOP-PRM-001` Primary Reference Material (coming soon).
-Only the **watermarked SAMPLE PDF** is ever published, and only after it has been read and checked.
+**Sample viewer rule (Alex, 28 Oct 2026; replaces "downloadable PDF"):** samples are **view only**. An approved,
+redacted PDF is converted locally into watermarked page images (`C:\PROIECTE\StoicScience	ools\sop_pages.py`,
+watermark "SAMPLE · Stoic Science") and shown in a lightbox viewer (dimmed, blurred background; no text layer, no
+download or print, right-click/drag/copy blocked). **The PDF itself is never published.** Nothing can make a public
+page fully copy-proof (screenshots); the watermark and redaction cover that. Viewer code and a local demo using the
+unreviewed RCP-001 (watermark "DEMO · NOT FOR PUBLICATION") live in `C:\PROIECTE\StoicScience\sop-viewer-demo\`,
+outside the repo; they move into the site only when the first redacted SOP is approved.
 Plan (25 Oct 2026): Alex will rewrite the SOPs as heavily redacted mock documents, downloadable as PDF;
 readable parts limited to public guidance (USP, ICH). Document descriptions on the page are placeholders
 until then. The gold "Please note" callout (mock SOPs, client IP under NDA) is approved and stays.

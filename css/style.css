@@ -942,3 +942,10 @@ textarea:focus-visible {
 .references ol {
   text-align: left;   /* reference entries stay left-aligned: long URLs don't justify well */
 }
+
+/* Sub-headings inside an article section (### in draft.md): small, navy, left-aligned */
+.post h3 {
+  font-size: var(--fs-body);
+  color: var(--navy);
+  margin: var(--space-3) 0 var(--space-1);
+}

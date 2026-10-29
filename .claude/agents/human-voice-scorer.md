@@ -2,6 +2,8 @@
 name: human-voice-scorer
 description: Scores each blog draft out of 100 on how naturally human and how much like Alex it reads, using a fixed rubric. Only drafts scoring 80 or more go to Alex for review; below 80 goes back to blog-writer with specific notes. Read-only on the draft.
 tools: Read, Grep, Glob, Edit
+model: sonnet
+effort: medium
 ---
 
 # Human-Voice Scorer: Stoic Science blog

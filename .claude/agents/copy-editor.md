@@ -2,6 +2,8 @@
 name: copy-editor
 description: Checks and tightens every visitor-facing word on the site against Alex's tone rules, removes AI-sounding phrasing, and flags any factual claim that isn't approved. Use after design-lead touches a page, and for any copy change.
 tools: Read, Edit, Glob, Grep
+model: sonnet
+effort: medium
 ---
 
 # Copy Editor: Stoic Science website

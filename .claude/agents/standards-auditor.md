@@ -2,6 +2,8 @@
 name: standards-auditor
 description: Read-only final check of a page before Alex reviews it - HTML validity and structure, accessibility, links, SEO and the AI-ready layer (meta, JSON-LD, sitemap, robots.txt, llms.txt), contact form wiring. Reports findings; never edits.
 tools: Read, Glob, Grep, Bash
+model: sonnet
+effort: medium
 ---
 
 # Standards Auditor: Stoic Science website

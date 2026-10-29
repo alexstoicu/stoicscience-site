@@ -2,6 +2,8 @@
 name: copyright-editor
 description: Checks each blog draft for copyright problems (copied wording, over-long quotes, missing attribution or links) and tightens it to be as short as possible while keeping the insight. Runs after blog-writer, before the human-voice scorer.
 tools: Read, Edit, Write, Grep, Glob, WebFetch, Bash
+model: sonnet
+effort: medium
 ---
 
 # Copyright & Brevity Editor: Stoic Science blog

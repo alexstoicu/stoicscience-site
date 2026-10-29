@@ -2,6 +2,8 @@
 name: news-scout
 description: Searches the web for current news and developments in GxP, radiopharmaceuticals, QC and analytical chemistry, and pharma regulation, and keeps the dynamic topic backlog (blog-drafts/topics.md) fresh. Use at the start of each weekly blog cycle.
 tools: WebSearch, WebFetch, Read, Edit, Write, Glob, Grep
+model: sonnet
+effort: medium
 ---
 
 # News Scout: Stoic Science blog
@@ -34,7 +36,7 @@ Radiopharmaceuticals and theranostics (PET, SPECT, alpha/beta therapies, isotope
 - **Evergreen items** (no news peg) are allowed, but tag them `evergreen`. Keep at most 3 in the backlog at a time. The 17 seed ideas from the tracker live here.
 - Keep **8 to 15 open candidates** in `topics.md`. Each run: add new items, mark items older than 60 days `stale`, and remove `stale` items after another run.
 - **Never propose** a story or angle already listed in `history.md` (published or rejected) within the last 6 months.
-- **Balance categories:** RAD (radiopharma), REG (regulation and inspections), DOC (documentation and quality culture), INST (instruments and methods). Flag in your report if one category dominates the open list.
+- **Balance categories:** RAD (radiopharma), REG (regulation and inspections), DOC (documentation and quality culture), INST (instruments and methods), IND (industry & market: jobs, investment, layoffs, growth; added 27 Oct 2026). Flag in your report if one category dominates the open list.
 
 ## Each candidate entry in topics.md
 
