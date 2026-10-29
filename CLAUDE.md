@@ -75,7 +75,7 @@ Goal: **one post per week**, current with industry news, in Alex's voice, nothin
   journal layout (full-width justified text, first-line indent, centred headings);
   **reference marks [n] (superscript) instead of in-text links**, linking to a numbered References list that
   links to the sources. Converter and preview: `stoicscience-blog-drafts/tools/preview.py`.
-- **Industry & Market (IND) posts:** no company names for layoffs/hiring (aggregate by type); add a lag note right
+- **No company names in any blog post** (Alex, 29 Oct 2026): aggregate by type. **IND posts:** add a lag note right
   after any statement based on lagging official data; charts drawn in-house from public data (SVG, navy/gold).
 - **Header:** Industry Insights sits on its own between the wordmark and Home (gold pill with a live dot).
 - The Blog nav link and `blog/index.html` stay **uncommitted until the first post is published**.
@@ -168,7 +168,7 @@ until then. The gold "Please note" callout (mock SOPs, client IP under NDA) is a
 - Hidden fixed subject starting `Stoic Science inquiry` (his Gmail filter files it under the label **Stoic Science**).
 - Hidden `botcheck` spam trap, fetch() script so the visitor stays on the page.
 - LinkedIn: `https://www.linkedin.com/in/alexstoicu` (opens in a new tab).
-- Public email address: not decided yet. Ask.
+- Public email address: none. The contact form is the only channel (tested, forwards to Alex).
 
 **Keep separate:** never link to or borrow style from Night Lab XP (`xp.stoicscience.us`) unless Alex asks.
 
@@ -177,7 +177,6 @@ until then. The gold "Please note" callout (mock SOPs, client IP under NDA) is a
 - About and Sample Work entry copy (live site gave only summaries).
 - AI crawlers: allow training crawlers, or only search/answer crawlers?
 - Card icons and the SAMPLE PDF: Alex drops them in the repo.
-- Public email: Gmail or `alex.stoicu@stoicscience.us` (test the alias first).
 
 ## Domain switch (last step, only on Alex's go)
 
