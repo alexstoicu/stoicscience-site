@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="#C8A96E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Stoic Science logo mark: Erlenmeyer flask outline with a capital "S" whose curves flow out through the side walls.
+       Gold stroke (#C8A96E) for use on navy. To use it on white, change the stroke on the <svg> tag to "currentColor" or navy.
+       Strokes are even, round-capped, no fill, transparent background. The flask is mirror-symmetric around x = 32;
+       the S bowl is symmetric under a 180-degree turn around its centre (32, 44.5). -->
+  <title>Stoic Science</title>
+
+  <!-- Flask rim: the flat lip across the top of the neck -->
+  <path d="M21.5 5.5 H42.5"/>
+
+  <!-- Right neck and upper right wall. It stops just short of the S so the line looks interrupted where the S meets it -->
+  <path d="M39 5.5 V24 L45.5 35.8"/>
+
+  <!-- Left wall below the S tail, rounded bottom-left corner, and the left half of the base (stops before the S) -->
+  <path d="M12.7 46.3 L8.8 53.6 Q6.4 58 11.4 58 H20"/>
+
+  <!-- Right base (mirror of the left half), starting after the gap at the S -->
+  <path d="M44 58 H52.6 Q57.6 58 55.2 53.6 L49 42.2"/>
+
+  <!-- One continuous line: left neck and wall bend into the S tail, run round the S (bottom curve, crossing, top curve),
+       and flow out through the right wall -->
+  <path d="M25 5.5 V24 L16.3 40
+           C15.5 41.6 15 43.4 16 45.4
+           C17.2 47.6 21.6 50.2 24 54.2
+           C25.4 56.8 28 58 32 58
+           C37 58 41.8 56 41.8 51.5
+           C41.8 47.8 37.5 46.4 32 44.5
+           C26.5 42.6 22.2 41.2 22.2 37.5
+           C22.2 33 27 31 32 31
+           C36 31 38.6 32.2 40 34.8
+           C41 36.8 42.4 38.4 44.8 38.6
+           C46.6 38.7 48 40.5 49 42.2"/>
+</svg>

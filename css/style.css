@@ -160,13 +160,26 @@ img {
   padding-bottom: var(--space-2);
 }
 
-/* The "Stoic Science" text logo */
+/* The "Stoic Science" logo: the flask mark, then the text.
+   inline-flex lines the mark up with the text's middle; gap sets the space between them. */
 .wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
   color: var(--gold);
   font-weight: 600;
   font-size: var(--fs-body);
   letter-spacing: 0.04em;
   text-decoration: none;
+}
+/* The mark (images/logo-mark.svg, decorative: the text is the accessible name).
+   1.9em tall (about 32px) so the thin strokes stay visible; the SVG has its own padding,
+   so the drawn flask is about 1.65em. width:auto keeps the square shape. */
+.wordmark-mark {
+  display: block;
+  height: 1.9em;
+  width: auto;
+  flex: none;      /* never squeezed narrower when the header wraps on a phone */
 }
 
 .site-nav ul {

@@ -1,5 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <!-- Stoic Science favicon: gold "S" on a navy square (placeholder until a logo mark exists) -->
-  <rect width="64" height="64" rx="8" fill="#1B2A41"/>
-  <text x="32" y="46" text-anchor="middle" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="42" font-weight="600" fill="#C8A96E">S</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="#C8A96E" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Stoic Science favicon: small-size version of the logo mark. Navy rounded square, flask filling about 80%,
+       thicker strokes and a simplified S (no wall notches) so it stays legible at 16-32 px. -->
+  <rect width="64" height="64" rx="12" fill="#1B2A41" stroke="none"/>
+
+  <!-- Flask: rim, neck, walls, rounded bottom corners. The base has a gap where the S touches it -->
+  <path d="M19.5 8 H44.5"/>
+  <path d="M24.5 8 V25 L9.9 51.6 Q7.5 56 12.5 56 H18"/>
+  <path d="M39.5 8 V25 L54.1 51.6 Q56.5 56 51.5 56 H46"/>
+
+  <!-- The S: its upper tail runs out into the right wall, its lower tail into the left wall -->
+  <path d="M12.4 47 C17 48.2 21.5 49.5 23 52
+           C23.5 54.5 27.5 56 32 56
+           C37 56 40.5 54.5 40.5 51.5
+           C40.5 48 38 46 32 44.5
+           C26 43 23.5 41 23.5 37.5
+           C23.5 34.5 27 33 32 33
+           C36.5 33 40.5 34.5 41 37
+           C41.2 38.6 43.5 38.8 46.9 38.8"/>
 </svg>
